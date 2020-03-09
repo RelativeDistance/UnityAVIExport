@@ -42,7 +42,7 @@ avi.stopRecording();
 ```csharp
 avi.getByteArray();
 ```
-Then save the byte array to a file with something like this:
+Save the byte array to a file with something like this:
 ```csharp
 File.WriteAllBytes("Test.avi" , avi.getByteArray());
 ```

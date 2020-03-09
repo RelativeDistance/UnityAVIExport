@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using com.relativedistance.UnityAVIExport;
+using System.Runtime.InteropServices;
+using System.IO;
 
 [RequireComponent(typeof(AVIExport))]
 public class AVIExportDemo : MonoBehaviour
 {
+	// Plugin used for downloading AVI directly from the browser
+	[DllImport("__Internal")]
+	private static extern void DownloadFile(byte[] array, int byteLength, string fileName);
+	
 	public Camera cam;
 	public int width = 1280;
 	public int height = 720;
@@ -22,7 +28,10 @@ public class AVIExportDemo : MonoBehaviour
 	void Start()
 	{
 		aviExport = GetComponent<AVIExport>();
+		
+		#if UNITY_EDITOR || UNITY_STANDALONE	
 		fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/" + fileName;
+		#endif
 	}
 	
 	public void startRecording()
@@ -38,6 +47,13 @@ public class AVIExportDemo : MonoBehaviour
 	
 	public void saveAVI()
 	{
-		aviExport.saveAVI(fileName);
+		byte[] b = aviExport.getAVIByteArray();
+		
+		#if UNITY_WEBGL && !UNITY_EDITOR
+		DownloadFile(b, b.Length, fileName);
+		#elif UNITY_EDITOR || UNITY_STANDALONE
+		File.WriteAllBytes(fileName, b);
+		#endif
 	}
+	
 }

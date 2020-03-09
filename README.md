@@ -2,59 +2,55 @@
 
 Export an MJPG encoded AVI at runtime or from the editor.  It is a Unity wrapper around this code: [MotionJPEGWriter](https://github.com/secile/MotionJPEGWriter) AVIs produced by this plugin will play natively on MacOS and Windows without any additional codecs.   
 
-# Runtime Usage
+## Runtime Usage
 
 [WebGL Demo Scene](https://relativedistance.github.io//UnityAVIExport/index)
 
 Add AVIExport script to a game object the get a reference to it:
 
 ```csharp
-AVIExport aviRef = GetComponent<AVIExport>();
+AVIExport avi = GetComponent<AVIExport>();
 ```
 
 Then use the following methods:
 
-## Initialize AVI
+### Initialize AVI
 
 ```csharp
-aviRef.Init(camera,width,height,AVIFps,gameFps,quality);
+avi.Init(camera,width,height,AVIFps,gameFps,quality);
 ```
-**Camera** - Camera reference, if null main camera will be used
-**Width/Height** - Dimensions of the AVI
-**AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
-**GameFPS** - The frame rate the project is currently running at on target platform.
-**Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 
+- **Camera** - Camera reference, if null main camera will be used
+- **Width/Height** - Dimensions of the AVI
+- **AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
+- **GameFPS** - The frame rate the project is currently running at on target platform.
+- **Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 
 
-## Start Recording
-
-```csharp
-aviRef.startRecording();
-```
-
-## Stop Recording
+### Start Recording
 
 ```csharp
-aviRef.stopRecording();
+avi.startRecording();
 ```
 
-## Get Byte Array
+### Stop Recording
 
 ```csharp
-aviRef.getAVIByteArray();
+avi.stopRecording();
+```
+
+### Get Byte Array
+
+```csharp
+avi.getAVIByteArray();
 ```
 Then save the byte array to a file with something like this:
-
 ```csharp
-using System.IO;
-
-byte[] b = aviExport.getAVIByteArray();
-File.WriteAllBytes(fileName, b);
+File.WriteAllBytes(fileName, aviExport.getAVIByteArray());
 ```
 See the included demo scene for an example.
 
-# Editor Usage
+## Editor Usage
 
-# TODO
+## TODO
 Currently video only, add audio
 Improve performance with AsyncGPUReadback (something like 10-20% increase expected)
 Look into WebGL 2 Render Texture bug and see if there's a workaround

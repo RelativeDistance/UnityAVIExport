@@ -4,7 +4,7 @@ Export an MJPG encoded AVI at runtime or from the editor.  It is a Unity wrapper
 
 ## Runtime Usage
 
-[*View WebGL Demo Scene*](https://relativedistance.github.io//UnityAVIExport/index)
+[**View WebGL Demo Scene**](https://relativedistance.github.io//UnityAVIExport/index)
 
 Add AVIExport script to a game object the get a reference to it:
 

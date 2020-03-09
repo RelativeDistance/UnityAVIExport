@@ -40,11 +40,11 @@ avi.stopRecording();
 ### Get Byte Array
 
 ```csharp
-avi.getAVIByteArray();
+avi.getByteArray();
 ```
 Then save the byte array to a file with something like this:
 ```csharp
-File.WriteAllBytes(fileName, aviExport.getAVIByteArray());
+File.WriteAllBytes("Test.avi" , avi.getByteArray());
 ```
 See the included demo scene for an example.
 

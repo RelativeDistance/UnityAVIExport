@@ -4,7 +4,7 @@ Export an MJPG encoded AVI at runtime or from the editor.  It is a Unity wrapper
 
 ## Runtime Usage
 
-[WebGL Demo Scene](https://relativedistance.github.io//UnityAVIExport/index)
+[*View WebGL Demo Scene*](https://relativedistance.github.io//UnityAVIExport/index)
 
 Add AVIExport script to a game object the get a reference to it:
 
@@ -51,6 +51,6 @@ See the included demo scene for an example.
 ## Editor Usage
 
 ## TODO
-Currently video only, add audio
-Improve performance with AsyncGPUReadback (something like 10-20% increase expected)
-Look into WebGL 2 Render Texture bug and see if there's a workaround
+- Currently video only, add audio
+- Improve performance with AsyncGPUReadback (something like 10-20% increase expected)
+- Look into WebGL 2 Render Texture bug and see if there's a workaround

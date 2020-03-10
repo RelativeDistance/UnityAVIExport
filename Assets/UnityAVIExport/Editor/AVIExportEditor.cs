@@ -92,6 +92,7 @@ public class AVIExportEditor : EditorWindow
 			}
 		}
 		
+		// Waits for fully in play mode before starting to record.
 		if (waitingForPlayMode)
 		{
 			if (inPlayMode)

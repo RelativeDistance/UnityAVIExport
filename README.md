@@ -4,7 +4,7 @@
 
 [**View WebGL Demo Scene**](https://relativedistance.github.io//UnityAVIExport/index)
 
-Export an MJPG encoded AVI at runtime or from the editor.  This plugin is a Unity wrapper around this code: [MotionJPEGWriter](https://github.com/secile/MotionJPEGWriter). The AVIs produced by this plugin will play natively on MacOS and Windows without any additional codecs. Plugin should work with all Unity platforms (only standalone and WebGL tested). 
+Export an MJPG encoded AVI at runtime or from the editor.  This plugin is a Unity wrapper around this code: [MotionJPEGWriter](https://github.com/secile/MotionJPEGWriter). The AVIs produced by this plugin will play natively on MacOS and Windows without any additional codecs. Plugin should work with all Unity platforms (only Standalone and WebGL tested). 
 
 # Installation
 Import the [UnityAVIExport.unitypackage](https://github.com/RelativeDistance/UnityAVIExport/raw/master/UnityAVIExport.unitypackage).  Then follow either the runtime or editor instructions below.

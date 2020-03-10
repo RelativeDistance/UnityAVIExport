@@ -4,14 +4,14 @@
 
 [**View WebGL Demo Scene**](https://relativedistance.github.io//UnityAVIExport/index)
 
-Export an MJPG encoded AVI at runtime or from the editor.  It is a Unity wrapper around this code: [MotionJPEGWriter](https://github.com/secile/MotionJPEGWriter). The AVIs produced by this plugin will play natively on MacOS and Windows without any additional codecs.   
+Export an MJPG encoded AVI at runtime or from the editor.  It is a Unity wrapper around this code: [MotionJPEGWriter](https://github.com/secile/MotionJPEGWriter). The AVIs produced by this plugin will play natively on MacOS and Windows without any additional codecs. Plugin should work with all Unity platforms (only standalone and WebGL tested). 
 
 # Installation
 Import the [UnityAVIExport.unitypackage](https://github.com/RelativeDistance/UnityBackgroundBuild/raw/master/Assets/UnityAVIExport.unitypackage).  Then follow either the runtime or editor instructions below.
 
 ## Runtime Usage
 
-Create an instance:
+Create a new instance:
 
 ```csharp
 AVIExport avi = new AVIExport();
@@ -24,7 +24,7 @@ Then use the following methods:
 ```csharp
 avi.Init(camera,width,height,AVIFps,gameFps,quality);
 ```
-- **Camera** - Camera reference, if null main camera will be used
+- **Camera** - Camera reference for AVI output, if null main camera will be used
 - **Width/Height** - Dimensions of the AVI in pixels
 - **AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
 - **GameFPS** - The frame rate the project is currently running at on target platform.
@@ -63,7 +63,7 @@ See the included demo scene for an example.
 
 Go to Window->AVI Export to open the editor window.
 
-- **Camera** - Camera reference, defaults to main camera
+- **Camera** - Camera content for the AVI output, defaults to main camera
 - **Width/Height** - Dimensions of the AVI in pixels
 - **AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
 - **Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 

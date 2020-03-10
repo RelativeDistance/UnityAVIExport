@@ -22,7 +22,7 @@ Then use the following methods:
 ### Initialize AVI
 
 ```csharp
-avi.Init(camera,width,height,AVIFps,gameFps,quality);
+avi.Init(camera,width,height,aviFps,gameFps,quality);
 ```
 - **Camera** - Camera reference for AVI output, if null main camera will be used
 - **Width/Height** - Dimensions of the AVI in pixels

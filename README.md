@@ -67,7 +67,7 @@ Go to Window->AVI Export to open the editor window.
 - **Width/Height** - Dimensions of the AVI in pixels
 - **AVI Fps** - Framerate of AVI, decimals ok such as 29.97 NTSC
 - **Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 
-
+- **Enter Play Mode** - Enters play mode when recording begins, stopping recording does not exit plyamode
 
 ## TODO
 - Currently video only, add audio

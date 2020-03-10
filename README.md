@@ -65,7 +65,7 @@ Go to Window->AVI Export to open the editor window.
 
 - **Camera** - Camera content for the AVI output, defaults to main camera
 - **Width/Height** - Dimensions of the AVI in pixels
-- **AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
+- **AVI Fps** - Framerate of AVI, decimals ok such as 29.97 NTSC
 - **Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 
 
 

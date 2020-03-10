@@ -5,7 +5,7 @@ using GitHub.secile.Avi;
 
 namespace com.relativedistance.UnityAVIExport
 {	
-	public class AVIExport : MonoBehaviour
+	public class AVIExport
 	{
 		Camera cam;
 		RenderTexture rt;
@@ -49,7 +49,7 @@ namespace com.relativedistance.UnityAVIExport
 			currentlyRecording = true;
 		}
 		
-		void Update()
+		public void DoUpdate()
 		{
 			if (currentlyRecording) 
 			{ 

@@ -1,15 +1,20 @@
+![](Screenshot.png)
+
 # UnityAVIExport
 
 Export an MJPG encoded AVI at runtime or from the editor.  It is a Unity wrapper around this code: [MotionJPEGWriter](https://github.com/secile/MotionJPEGWriter) AVIs produced by this plugin will play natively on MacOS and Windows without any additional codecs.   
+
+# Installation
+Import the [UnityAVIExport.unitypackage](https://github.com/RelativeDistance/UnityBackgroundBuild/raw/master/Assets/UnityAVIExport.unitypackage).  Then follow either the runtime or editor instructions below.
 
 ## Runtime Usage
 
 [**View WebGL Demo Scene**](https://relativedistance.github.io//UnityAVIExport/index)
 
-Add AVIExport script to a game object the get a reference to it:
+Create an instance:
 
 ```csharp
-AVIExport avi = GetComponent<AVIExport>();
+AVIExport avi = new AVIExport();
 ```
 
 Then use the following methods:
@@ -20,10 +25,16 @@ Then use the following methods:
 avi.Init(camera,width,height,AVIFps,gameFps,quality);
 ```
 - **Camera** - Camera reference, if null main camera will be used
-- **Width/Height** - Dimensions of the AVI
+- **Width/Height** - Dimensions of the AVI in pixels
 - **AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
 - **GameFPS** - The frame rate the project is currently running at on target platform.
 - **Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 
+
+### Frame Update
+```csharp
+avi.DoUpdate();
+```
+Call this every frame in Update, LateUpdate, etc.
 
 ### Start Recording
 
@@ -44,11 +55,19 @@ avi.getByteArray();
 ```
 Save the byte array to a file with something like this:
 ```csharp
-File.WriteAllBytes("Test.avi" , avi.getByteArray());
+File.WriteAllBytes("Video.avi" , avi.getByteArray());
 ```
 See the included demo scene for an example.
 
 ## Editor Usage
+
+Go to Window->AVI Export to open the editor window.
+
+- **Camera** - Camera reference, defaults to main camera
+- **Width/Height** - Dimensions of the AVI in pixels
+- **AVIFps** - Framerate of AVI, decimals ok such as 29.97 NTSC
+- **Quality** - Integer between 0 (worst) - 100 (best) for jpg quality of each frame. 
+
 
 ## TODO
 - Currently video only, add audio

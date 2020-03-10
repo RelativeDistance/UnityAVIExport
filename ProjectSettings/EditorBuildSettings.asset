@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/UnityAVIExport/Demo Scenes/Demo.unity
+    path: Assets/UnityAVIExport/Demo Scene/Demo.unity
     guid: 5812c0886a6f94985b0458afc2d82877
   m_configObjects: {}

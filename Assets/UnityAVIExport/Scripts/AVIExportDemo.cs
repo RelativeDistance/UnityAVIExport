@@ -6,10 +6,9 @@ using com.relativedistance.UnityAVIExport;
 using System.Runtime.InteropServices;
 using System.IO;
 
-[RequireComponent(typeof(AVIExport))]
 public class AVIExportDemo : MonoBehaviour
 {
-	// Plugin used for downloading AVI directly from the browser
+	// Plugin is used for downloading AVI directly from the browser
 	[DllImport("__Internal")]
 	private static extern void DownloadFile(byte[] array, int byteLength, string fileName);
 	
@@ -23,31 +22,36 @@ public class AVIExportDemo : MonoBehaviour
 	public int quality = 90;
 	public string fileName = "test.avi";
 	
-	AVIExport aviExport;
+	AVIExport avi;
 	
 	void Start()
 	{
-		aviExport = GetComponent<AVIExport>();
+		avi = new AVIExport();
 		
 		#if UNITY_EDITOR || UNITY_STANDALONE	
 		fileName = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "/" + fileName;
 		#endif
 	}
 	
+	void Update()
+	{
+		avi.DoUpdate();
+	}
+	
 	public void startRecording()
 	{
-		aviExport.Init(cam,width,height,AVIFps,gameFps,quality);
-		aviExport.startRecording();
+		avi.Init(cam,width,height,AVIFps,gameFps,quality);
+		avi.startRecording();
 	}
 	
 	public void stopRecording()
 	{
-		aviExport.stopRecording();
+		avi.stopRecording();
 	}
 	
 	public void saveAVI()
 	{
-		byte[] b = aviExport.getAVIByteArray();
+		byte[] b = avi.getAVIByteArray();
 		
 		#if UNITY_WEBGL && !UNITY_EDITOR
 		DownloadFile(b, b.Length, fileName);

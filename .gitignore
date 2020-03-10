@@ -2,6 +2,7 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+!*.unitypackage
 /.DS_Store
 /Assets/.DS_Store
 
@@ -59,7 +60,7 @@ sysinfo.txt
 
 # Builds
 *.apk
-*.unitypackage
+
 
 # Crashlytics generated file
 crashlytics-build.properties
